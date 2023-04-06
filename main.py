@@ -13,7 +13,7 @@ if key_lylic not in st.session_state:
 
 def send_prompt():
     prompt = st.session_state[key_prompt]
-    r = requests.post("http://127.0.0.1:8000/generate_lylic", 
+    r = requests.post("https://lylicgen.gstate.dev/generate_lylic", 
                     headers = {'Content-Type': 'application/json'},
                     json = {'lylic_prompt': prompt})
     st.session_state[key_lylic] = r.json()['lylic']
